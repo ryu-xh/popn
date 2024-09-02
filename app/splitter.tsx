@@ -7,7 +7,7 @@ const Container = styled.div`
 	align-items: center;
 	border-bottom: 4px dashed #61616150;
 	height: 4px;
-	margin: 16px;
+	margin: 8px 16px;
 `;
 
 const Splitter: React.FC = () => {

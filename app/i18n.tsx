@@ -13,17 +13,19 @@ const resources = {
   },
 };
 
-const userLanguage = window.navigator.language;
+const userLanguage = typeof window !== "undefined" ? window.localStorage.getItem("language") || window.navigator.language : "ko";
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: localStorage.getItem("language") || userLanguage || "ko",
+  lng: userLanguage,
   fallbackLng: "ko",
   interpolation: {
     escapeValue: false,
   },
 });
 
-document.documentElement.lang = i18n.language;
+if (typeof document !== "undefined") {
+  document.documentElement.lang = i18n.language;
+}
 
 export default i18n;
