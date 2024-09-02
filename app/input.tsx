@@ -1,6 +1,8 @@
 import {Manrope} from "next/font/google";
 import styled from "styled-components";
 
+import ClearIcon from "../public/icon-clear.svg";
+
 const manrope = Manrope({ subsets: ["latin"] });
 
 const Container = styled.div`
@@ -38,6 +40,14 @@ const InputBox = styled.input `
 	background-color: transparent;
 	width: 100%;
 	padding-right: 8px;
+	outline: none;
+`;
+
+const ClearButton = styled.button`
+	border-width: 0;
+	background-color: transparent;
+	width: 30px;
+	height: 30px;
 `;
 
 interface InputProps {
@@ -45,6 +55,7 @@ interface InputProps {
 	value?: string;
 	onInput: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	color: string;
+	tabIndex?: number;
 }
 
 const Input: React.FC<InputProps> = (props) => {
@@ -52,7 +63,10 @@ const Input: React.FC<InputProps> = (props) => {
 		<Container>
 			<BackgroundLine color={props.color} />
 			<InputName className={manrope.className}>{props.inputName}</InputName>
-			<InputBox className={manrope.className} onInput={props.onInput} value={props.value} maxLength={6}/>
+			<InputBox tabIndex={props.tabIndex} inputMode={'numeric'} className={manrope.className} onInput={props.onInput} value={props.value} maxLength={6}/>
+			<ClearButton>
+				<ClearIcon />
+			</ClearButton>
 		</Container>
 	)
 };
