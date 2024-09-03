@@ -45,7 +45,7 @@ const calculateBad = (score: number, cool: number, great: number, good: number) 
 }
 
 const isNewVersionScore = (score: number, cool: number, great: number, good: number) => {
-	return calculateOriginalBad(score, cool, great, good) - calculateBad(score, cool, great, good) < 0.01;
+	return calculateOriginalBad(score, cool, great, good) - calculateBad(score, cool, great, good) < 0.05;
 }
 
 const calculateOriginalBadPreviousVersion = (score: number, cool: number, great: number, good: number) => {
@@ -61,7 +61,7 @@ const calculateBadPreviousVersion = (score: number, cool: number, great: number,
 }
 
 const isPreviousVersionScore = (score: number, cool: number, great: number, good: number) => {
-	return calculateOriginalBadPreviousVersion(score, cool, great, good) - calculateBadPreviousVersion(score, cool, great, good) < 0.01;
+	return calculateOriginalBadPreviousVersion(score, cool, great, good) - calculateBadPreviousVersion(score, cool, great, good) < 0.05;
 }
 
 export {calculateScore, calculateScorePreviousVersion, calculateBad, calculateBadPreviousVersion, isNewVersionScore, isPreviousVersionScore};
