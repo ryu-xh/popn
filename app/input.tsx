@@ -3,7 +3,10 @@ import styled from "styled-components";
 
 import {useRef, useState} from "react";
 
-const manrope = Manrope({ subsets: ["latin"] });
+const manrope = Manrope({
+	subsets: ["latin"],
+	display: 'swap'
+});
 
 const Container = styled.div`
 	display: flex;

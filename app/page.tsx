@@ -12,8 +12,8 @@ import {
 } from "@/app/utils/calculator";
 import {Noto_Sans_KR, Noto_Sans_JP} from "next/font/google";
 
-const notoSansKR = Noto_Sans_KR({ subsets: ["latin"] });
-const notoSansJP = Noto_Sans_JP({ subsets: ["latin"] });
+const notoSansKR = Noto_Sans_KR({ subsets: ["latin"], display: 'swap' });
+const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], display: 'swap' });
 
 import "./i18n";
 

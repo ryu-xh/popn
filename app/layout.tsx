@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import {useTranslation} from "react-i18next";
-
-const inter = Inter({ subsets: ["latin"] });
+import {ThemeProvider, useTheme} from "styled-components";
 
 export const metadata: Metadata = {
   title: "pop'n music Calculator",
@@ -15,10 +12,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const theme = useTheme();
+
   return (
-    <html>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-      <body className={inter.className}>{children}</body>
+    <html lang={'en'}>
+    <head>
+      <link rel="manifest" href="/manifest.json"/>
+    </head>
+    <body>
+      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+    </body>
     </html>
   );
 }

@@ -2,7 +2,9 @@
 const nextConfig = {
 	reactStrictMode: true,
 	compiler: {
-		styledComponents: true,
+		styledComponents: {
+			ssr: false,
+		},
 	},
 	webpack: config => {
 		config.module.rules.push({
@@ -13,7 +15,10 @@ const nextConfig = {
 		return config;
 	},
 	output: 'export',
-	trailingSlash: true
+	trailingSlash: true,
+	images: {
+		formats: ['image/avif', 'image/webp'],
+	},
 };
 
 export default nextConfig;

@@ -3,8 +3,8 @@ import styled from "styled-components";
 import {Manrope, Noto_Sans_KR, Noto_Sans_JP} from "next/font/google";
 
 const manrope = Manrope({ subsets: ["latin"] });
-const notoSansKR = Noto_Sans_KR({ subsets: ["latin"] });
-const notoSansJP = Noto_Sans_JP({ subsets: ["latin"] });
+const notoSansKR = Noto_Sans_KR({ subsets: ["latin"], display: 'swap' });
+const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], display: 'swap' });
 
 const Container = styled.div<{isExists: boolean}>`
 	display: flex;
